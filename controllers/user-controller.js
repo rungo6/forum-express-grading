@@ -1,13 +1,8 @@
 const bcrypt = require('bcryptjs')
-<<<<<<< HEAD
-const db = require('../models')
-const { User } = db
-
-=======
 const { User, Comment, Restaurant } = require('../models')
 const { getUser } = require('../helpers/auth-helpers')
 const { imgurFileHandler } = require('../helpers/file-halpers')
->>>>>>> R03
+
 const userController = {
   signUpPage: (req, res) => {
     res.render('signup')
@@ -43,11 +38,6 @@ const userController = {
     req.flash('success_messages', '登出成功！')
     req.logout()
     res.redirect('/signin')
-<<<<<<< HEAD
-  }
-}
-
-=======
   },
   getUser: async (req, res, next) => {
     const currentUser = getUser(req)
@@ -90,5 +80,4 @@ const userController = {
       .catch(err => next(err))
   }
 }
->>>>>>> R03
 module.exports = userController
